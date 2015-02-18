@@ -1,0 +1,17 @@
+<p>
+  <em>{{message}}</em>
+</p>
+
+{{input value=noteTitle placeholder="Note Title goes here"}}
+{{input value=noteContent placeholder="Your Note goes here..."}}
+<button id="submit" {{action "submitNote"}}>Submit</button>
+
+{{#each note in model}}
+<div class='note'>
+  <hl>{{note.title}}</hl>
+  <p>{{note.body}}</p>
+  <button id="delete" {{action "deleteNote" note}}>Delete</button>
+</div>
+{{/each}}
+
+{{outlet}}
